@@ -1,0 +1,58 @@
+﻿<Window x:Class="ProjectWpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectWpfClient"
+        mc:Ignorable="d"
+        Title="Admin Window" Height="604.5" Width="963.5" Background="DimGray" WindowStartupLocation="CenterScreen" >
+
+    <Grid Margin="0,0,2,0" Height="556" VerticalAlignment="Top">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="392*"/>
+            <ColumnDefinition Width="77*"/>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="343*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="welcomelabel" Background="White" FontFamily="arial" FontWeight="ExtraBold" Content="Welcome : " HorizontalAlignment="Left" Margin="0.5,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="crudcustomerlabel" Foreground="White" FontFamily="arial" FontWeight="ExtraBold" Content="Add New Employee" Grid.Column="5" HorizontalAlignment="Left" Margin="119,9,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="customerdataGrid" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,39,0,0" VerticalAlignment="Top" Width="632" Height="356" RenderTransformOrigin="2.083,1.692" Grid.ColumnSpan="5" AlternationCount="2" Grid.Column="1"/>
+        <Button x:Name="buttonShowAllCustomers" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold"  Content="Show All Users" HorizontalAlignment="Left" Margin="240,418,0,0" VerticalAlignment="Top" Width="114" Click="buttonShowAllCustomer_Click" Grid.Column="1"/>
+        <Label x:Name="labelFirstName" Foreground="WhiteSmoke" FontFamily="arial" FontSize="12" FontWeight="ExtraBold" Content="First Name" Grid.Column="5" HorizontalAlignment="Left" Margin="73,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,-0.077"/>
+        <Label x:Name="labelLastName" Foreground="WhiteSmoke" FontFamily="arial" FontSize="12" FontWeight="ExtraBold" Content="Last Name" Grid.Column="5" HorizontalAlignment="Left" Margin="73,85,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelEmail" Foreground="WhiteSmoke" FontFamily="arial" FontSize="12" FontWeight="ExtraBold" Content="Email" Grid.Column="5" HorizontalAlignment="Left" Margin="73,120,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Foreground="WhiteSmoke" FontFamily="arial" FontSize="12" FontWeight="ExtraBold" Content="Username" Grid.Column="5" HorizontalAlignment="Left" Margin="73,155,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Foreground="WhiteSmoke" FontFamily="arial" FontSize="12" FontWeight="ExtraBold" Content="Password" Grid.Column="5" HorizontalAlignment="Left" Margin="73,190,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Foreground="WhiteSmoke" FontFamily="arial" FontSize="12" FontWeight="ExtraBold" Content="Gender" Grid.Column="5" HorizontalAlignment="Left" Margin="73,225,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbxGender"  Width="136" Text="--Select a Gender--" IsReadOnly="True" IsEditable="True"  HorizontalAlignment="Left" Margin="187,225,0,0" VerticalAlignment="Top" Grid.Column="5"></ComboBox>
+        <TextBox x:Name="textBoxfirstname" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="187,50,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="136"/>
+        <TextBox x:Name="textBoxlastname" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="187,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136"/>
+        <TextBox x:Name="textBoxemail" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136" Grid.Column="5" Margin="187,120,0,0"/>
+        <TextBox x:Name="textBoxusername"  Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="187,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136"/>
+        <PasswordBox x:Name="textBoxpassword" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="187,190,0,0"  VerticalAlignment="Top" Width="136"/>
+        <Image x:Name="imagecustomer" Grid.Column="5" HorizontalAlignment="Left" Height="126" Margin="189,269,0,0" VerticalAlignment="Top" Stretch="Fill" Width="136"/>
+
+        <Button x:Name="buttonAddCustomer"  FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold" Content="Add New User" Grid.Column="5" HorizontalAlignment="Left" Margin="73,445,0,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.133,0.725" Click="buttonAddNewUser_Click"/>
+        <Button x:Name="buttonUpdate" Visibility="Visible" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold" Content="Update" Grid.Column="5" HorizontalAlignment="Left" Margin="189,445,0,0" VerticalAlignment="Top" Width="66" Click="buttonUpdateUser_Click" RenderTransformOrigin="0.576,0.861"/>
+        <Button x:Name="buttonDelete" Visibility="Visible" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold" Content="Delete" Grid.Column="5" HorizontalAlignment="Left" Margin="261,445,0,0" VerticalAlignment="Top" Width="64" Click="buttonDeleteUser_Click" RenderTransformOrigin="0.492,1.194"/>
+        <Button x:Name="button4" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold" Content="Get a User" Grid.Column="5" HorizontalAlignment="Left" Margin="87,507,0,0" VerticalAlignment="Top" Width="92" Click="buttonGetUser_Click"/>
+        <TextBox x:Name="textBoxCustID" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="225,513,0,0" TextWrapping="Wrap" Text="Enter User ID" VerticalAlignment="Top" Width="100">
+
+        </TextBox>
+        <TextBox x:Name="textBoxID" Visibility="Hidden" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="183,457,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="102"/>
+        <Button x:Name="buttonUpload" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold" Content="Upload Photo" Grid.Column="5" HorizontalAlignment="Left" Margin="73,316,0,0" VerticalAlignment="Top" Width="106" Height="35" Click="buttonUpload_Click"/>
+        <Button x:Name="LogOut" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold"  Content="LogOut" HorizontalAlignment="Left" Margin="0,515,0,0" VerticalAlignment="Top" Width="68" Click="buttonLogOut_Click" Grid.Column="1" Height="40"/>
+
+        <Button x:Name="buttonReset"  FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold" Content="Reset" HorizontalAlignment="Left" Margin="264,400,0,0" VerticalAlignment="Top" Width="56" Height="37" Click="buttonReset_Click" Grid.Column="5"/>
+        <Border BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="408" Margin="62,32,0,0" VerticalAlignment="Top" Width="270" Grid.Column="5"/>
+
+
+
+
+    </Grid>
+
+</Window>

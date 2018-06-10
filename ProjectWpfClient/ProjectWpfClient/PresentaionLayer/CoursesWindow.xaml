@@ -1,0 +1,26 @@
+﻿<Window x:Class="ProjectWpfClient.CoursesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectWpfClient"
+        mc:Ignorable="d"
+        Title="Courses" Height="340.853" Width="640.947" Background="DimGray" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,15,8">
+        <DataGrid x:Name="dataGridCourses" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="313" Height="156"/>
+        <Button x:Name="buttonShowAllCourses" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold"  Content="Show All Courses" HorizontalAlignment="Left" Margin="82,181,0,0" VerticalAlignment="Top" Width="126" Click="buttonShowAllCourses_Click"/>
+        <Button x:Name="Close" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold"  Content="Close&#xD;&#xA;" HorizontalAlignment="Left" Margin="543,256,0,0" VerticalAlignment="Top" Width="61" Click="buttonClose_Click" Height="36"/>
+        <TextBox x:Name="textBoxCourseCode" HorizontalAlignment="Left" Height="23" Margin="455,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxCourseDescription" HorizontalAlignment="Left" Height="23" Margin="455,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxCourseId" HorizontalAlignment="Left" Height="23" Margin="472,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Visibility="Hidden"/>
+        <Label x:Name="labelDescription" Foreground="WhiteSmoke" FontFamily="arial" FontSize="12" FontWeight="ExtraBold" Content="Description :" HorizontalAlignment="Left" Margin="358,100,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,-0.077"/>
+        <Label x:Name="labelCode" Foreground="WhiteSmoke" FontFamily="arial" FontSize="12" FontWeight="ExtraBold" Content="Code :" HorizontalAlignment="Left" Margin="397,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,-0.077"/>
+        <Label x:Name="labelCourseData" Foreground="WhiteSmoke" FontFamily="arial" FontSize="12" FontWeight="ExtraBold" Content="Course's Data" HorizontalAlignment="Left" Margin="375,15,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,-0.077"/>
+        <Button x:Name="buttonGetACourse" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold"  Content="Ger A Course" HorizontalAlignment="Left" Margin="371,195,0,0" VerticalAlignment="Top" Width="99" Click="buttonGetACourse_Click" Height="36"/>
+        <TextBox x:Name="textBoxCourseIdSearch" HorizontalAlignment="Left" Height="23" Margin="490,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.564,4.204" Text="Course Id ?"/>
+        <Button x:Name="buttonAddCourse"  FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold" Content="Add New Course" HorizontalAlignment="Left" Margin="330,143,0,0" VerticalAlignment="Top" Width="119" RenderTransformOrigin="0.133,0.725" Click="buttonAddNewCourse_Click" Height="39"/>
+        <Button x:Name="buttonUpdate" Visibility="Visible" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold" Content="Update" HorizontalAlignment="Left" Margin="470,143,0,0" VerticalAlignment="Top" Width="66" Click="buttonUpdateCourse_Click" RenderTransformOrigin="0.576,0.861"/>
+        <Button x:Name="buttonDelete" Visibility="Visible" FontFamily="arial" FontSize="10.5" FontWeight="ExtraBold" Content="Delete" HorizontalAlignment="Left" Margin="542,143,0,0" VerticalAlignment="Top" Width="64" Click="buttonDeleteCourse_Click" RenderTransformOrigin="0.492,1.194"/>
+
+    </Grid>
+</Window>
